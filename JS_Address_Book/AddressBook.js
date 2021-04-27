@@ -105,18 +105,28 @@ try {
          "91 9493922495", "somulasivaramireddy@gmail.com"));
     detailsArray.push(new Contact("Nagireddy", "Nandyal", "Allagada","Kurnool", "AP",
         "518134", "91 9441605203", "nagireddy@gmail.com"));
-    detailsArray.forEach((contact) => console.log(contact.toString()));
-    detailsArray.forEach((contact) => console.log(contact.toString()));
+        console.log("\ncontacts before being updated\n");
 
-    detailsArray.filter(contact => contact.firstName == "Siva").map(contact => contact.firstName = "Sakshi");
-    console.log("\ncontacts after being updated\n");
-    detailsArray.forEach((contact) => console.log(contact.toString()));
-
-    let index = detailsArray.findIndex(contact => contact.firstName == "Nagireddy");
-    detailsArray.splice(index, 1);
-    console.log("\naddress book after deleting contct");
-    detailsArray.forEach((contact) => console.log(contact.toString()));
+        detailsArray.forEach((contact) => console.log(contact.toString()));
+    
+        detailsArray.filter(contact => contact.firstName == "Pratiksha").map(contact => contact.firstName = "Sakshi");
+        console.log("\ncontacts after being updated\n");
+        detailsArray.forEach((contact) => console.log(contact.toString()));
+    
+        let index = detailsArray.findIndex(contact => contact.firstName == "Neha");
+        detailsArray.splice(index, 1);
+        console.log("\naddress book after deleting contct");
+        detailsArray.forEach((contact) => console.log(contact.toString()));
+    
+        let count = 0;
+        function FindNumberOfContacts(contact) {
+            if (contact != null)
+                return count++;
+        }
+        detailsArray.reduce(FindNumberOfContacts, 0);
+        console.log("\nTotal number of contacts in array  : " + count);
 }
 catch (e) {
     console.log(e);
+    
 }
