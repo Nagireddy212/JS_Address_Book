@@ -108,25 +108,44 @@ try {
         console.log("\ncontacts before being updated\n");
 
         detailsArray.forEach((contact) => console.log(contact.toString()));
-    
-        detailsArray.filter(contact => contact.firstName == "Pratiksha").map(contact => contact.firstName = "Sakshi");
-        console.log("\ncontacts after being updated\n");
-        detailsArray.forEach((contact) => console.log(contact.toString()));
-    
-        let index = detailsArray.findIndex(contact => contact.firstName == "Neha");
-        detailsArray.splice(index, 1);
-        console.log("\naddress book after deleting contct");
-        detailsArray.forEach((contact) => console.log(contact.toString()));
-    
-        let count = 0;
-        function FindNumberOfContacts(contact) {
-            if (contact != null)
-                return count++;
-        }
-        detailsArray.reduce(FindNumberOfContacts, 0);
-        console.log("\nTotal number of contacts in array  : " + count);
+
+    detailsArray.filter(contact => contact.firstName == "Pratiksha").map(contact => contact.firstName = "Sakshi");
+    console.log("\ncontacts after being updated\n");
+    detailsArray.forEach((contact) => console.log(contact.toString()));
+
+    let index = detailsArray.findIndex(contact => contact.firstName == "Neha");
+    detailsArray.splice(index, 1);
+    console.log("\naddress book after deleting contct");
+    detailsArray.forEach((contact) => console.log(contact.toString()));
+
+    let count = 0;
+    function FindNumberOfContacts(contact) {
+        if (contact != null)
+            return count++;
+    }
+    detailsArray.reduce(FindNumberOfContacts, 0);
+    console.log("\nTotal number of contacts in array  : " + count);
+
+    let newContact = new Contact("Apurva", "Ikhe", "Panzarapol", "Vadodara", "Gujrat",
+        "963 698", "91 7525752131", "apurva.ikhe@gmail.com");
+
+
+    function checkDuplicates(count, contact) {
+        if (contact != null)
+            count++;
+        return count;
+    }
+
+    function addContact() {
+        if (countDuplicate == 0) detailsArray.push(newContact);
+        else console.log("\nContact not added in the address book. Duplicate Entry found.\n");
+    }
+
+    let countDuplicate = detailsArray.filter(contact => contact.firstName == newContact.firstName).map(contact => contact).reduce(checkDuplicates, 0);
+    addContact();
+    console.log("Checking duplicate while adding new contact in the address book");
+    detailsArray.forEach((contact) => console.log(contact.toString()));
 }
 catch (e) {
     console.log(e);
-    
 }
