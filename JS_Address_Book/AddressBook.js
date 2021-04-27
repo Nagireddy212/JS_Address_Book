@@ -104,7 +104,7 @@ try {
     detailsArray.push(new Contact("Sivaram", "Somula", "Hyderabad","Hyderabad", "TG", "500038",
          "91 9493922495", "somulasivaramireddy@gmail.com"));
     detailsArray.push(new Contact("Nagireddy", "Nandyal", "Allagada","Kurnool", "AP",
-        "518134", "91 9441605203", "pratikshathute@gmail.com"));
+        "518134", "91 9441605203", "nagireddy@gmail.com"));
     detailsArray.forEach((contact) => console.log(contact.toString()));
 }
 catch (e) {
