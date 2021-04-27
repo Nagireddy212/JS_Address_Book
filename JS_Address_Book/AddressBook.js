@@ -84,11 +84,29 @@ class Contact {
     }
 
     toString() {
-        return "First Name: " + this.firstName + ", Last Name: " + this.lastName
+        return "First Name: " + this.firstName
+            + ", Last Name: " + this.lastName
             + "\nAddress: " + this.address
-            + ", City: " + this.city + ", State: "
-            + this.state + "\nZip: " + this.zip
-            + ", Phone Number: " + this.phoneNumber + ", Email: " + this.email;
+            + ", City: " + this.city
+            + ", State: " + this.state
+            + ", Zip: " + this.zip
+            + "\nPhone Number: " + this.phoneNumber
+            + ", Email: " + this.email;
     }
 }
 console.log("Welcome to the Address Book Program");
+try {
+    let detailsArray = new Array();
+    detailsArray.push(new Contact("Nagireddy", "Somula", "Kurnool", "Kurnool", "AP", "518134",
+        "91 9492880337", "somulanagireddy@gmail.com"));
+    detailsArray.push(new Contact("Siva", "Somula", "Nandyal","Kurnool", "AP", "518134",
+         "91 9492880337", "sivaramreddy@gmail.com"));
+    detailsArray.push(new Contact("Sivaram", "Somula", "Hyderabad","Hyderabad", "TG", "500038",
+         "91 9493922495", "somulasivaramireddy@gmail.com"));
+    detailsArray.push(new Contact("Nagireddy", "Nandyal", "Allagada","Kurnool", "AP",
+        "518134", "91 9441605203", "pratikshathute@gmail.com"));
+    detailsArray.forEach((contact) => console.log(contact.toString()));
+}
+catch (e) {
+    console.log(e);
+}
